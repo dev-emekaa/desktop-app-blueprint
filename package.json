@@ -1,6 +1,6 @@
 {
   "name": "desktop-app-blueprint",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "Design-to-release desktop app workflow for Claude Code — the docs come first, the design system governs every screen, the backend's api-docs drive integration, and signed releases ship through an update feed.",
   "type": "module",
