@@ -52,7 +52,7 @@ These apply to every change.
 2. **Reproduce it**: in mock mode when the issue is client-side, against staging (`pnpm dev:staging`) when it involves the backend, on the platform it was reported on and then on the others. For a crash, start from the Sentry event: the stack, the breadcrumbs, the process it came from (renderer or Main), the OS and its version, the app version and the display scaling. A Main-process crash or a native-module crash is reproduced on the platform it came from before it is called fixed. Look at the screen; read the logs and the network calls. An issue that cannot be reproduced is reported as such with what was tried, not fixed speculatively.
 3. **Confirm it against the docs**: the design export and `DESIGN.md` (is it a design drift?), the screen spec and app flow (is the screen doing what the flow says?), the business rules (is the limit or state right?), the api-docs (is the backend returning what it documents?).
 4. **Classify it:**
-   - **Client bug** — the code does not do what the docs say, on one platform or both. Fix here.
+   - **Client bug** — the code does not do what the docs say, on one platform or all. Fix here.
    - **Platform or OS defect** — the code is right and a platform, an OS version or a library misbehaves. Fix with the narrowest guard (`process.platform`, the OS version), record the version it affects, and note when the guard can be removed.
    - **Backend bug** — the endpoint does not do what the api-docs say. Log it; stop on this issue.
    - **Doc error** — the docs disagree with each other or with an approved design. Report it to me with the options; do not pick one.
