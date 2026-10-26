@@ -37,7 +37,8 @@ Universal and project-agnostic, for the desktop client's repo. Project specifics
 | Design system | `DESIGN.md`, at the project root | `/design-system` |
 | Style tile | `docs/design/style-tile.html` | `/design-system`, only when the canvas is unavailable |
 | Navigation map | `docs/design/navigation.md` | `/desktop-build`, in Phase 0: the navigation model, the windows, the menus and shortcuts, and the route map |
-| Approved designs | `docs/design/screens/{unit}/` | `/desktop-build`: exports of the approved screens, one folder per unit |
+| Approved designs | `docs/design/screens/{unit}/` | `/desktop-build`: exports of the approved screens, one folder per unit — the record of what was approved |
+| Design references | `docs/design/references/` | You, optionally: screenshots of products you admire, read by `/design-system` and `/desktop-build`. Never committed |
 | Image prompts | `docs/design/images.md` | `/desktop-build`, only when an image has to be generated outside the session |
 | Screen specs | `docs/screen-specs/` (first phase) · `docs/phase-{n}/features/{feature}/screen-specs-{feature}.md` (later) | `/screen-specs`, from the built UI. See ownership below |
 | Backend issues | `docs/integration-handoff/backend-issues-{client}.md` · its `-resolved` archive — one file per client, this repo's being `backend-issues-desktop.md` | `/desktop-integrate` and `/desktop-issue-fix`; the backend appends resolutions |
@@ -61,7 +62,7 @@ Design exports are named per screen: `docs/design/screens/{unit}/{nn}-{screen-na
 
 The first phase is organised by feature area, in the order `docs/feature-areas.md` gives, and tracked in `docs/ui-implementation-order.md`. Every later phase is organised by feature, tracked in `docs/phase-{n}/ui-implementation-order.md`, in the order of the backend's `docs/phase-{n}/implementation-order.md` unless this repo records a reason to differ.
 
-The tracker has one row per unit, with its status, the date each status was reached, and a notes column. It never holds content: content lives in the docs.
+The tracker has one row per unit, with its status, the date each status was reached, and a notes column, which also holds the link to the unit's `/design` canvas once it is designed there. It never holds content: content lives in the docs. The canvas can still be edited after approval; the exports, not the canvas, are what was approved, and a canvas edit counts only once it is approved and exported again.
 
 ## Readiness
 

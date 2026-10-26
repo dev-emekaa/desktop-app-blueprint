@@ -60,7 +60,7 @@ npx github:dev-emekaa/desktop-app-blueprint init --force
 
 - Skills and rules are overwritten, including any edits you made — run it on a clean working tree and read the diff before committing.
 - `CLAUDE.md` is never overwritten: it holds your project's values.
-- To pin a version: `npx github:dev-emekaa/desktop-app-blueprint#v1.0.3 init`. If an update doesn't seem to land: `npm cache clean --force`.
+- To pin a version: `npx github:dev-emekaa/desktop-app-blueprint#v1.0.4 init`. If an update doesn't seem to land: `npm cache clean --force`.
 
 ---
 
@@ -178,7 +178,7 @@ The zip appears under the release's **Assets** as `desktop-app-blueprint-v{versi
 
 - Node 22 or later, and Claude Code
 - For releases: an Apple Developer Program membership, an Azure Trusted Signing account, and a Cloudflare R2 or S3 bucket for the update feed — `/desktop-setup`'s guide walks through them
-- For design research: Mobbin, connected through its MCP — `/design-system` and `/desktop-build` use it for references
+- Optional, for design research: Mobbin, connected through its MCP. Without it, `/design-system` and `/desktop-build` research on the web, plus any screenshots you put in `docs/design/references/`
 - For the `/design` canvas: a recent Claude Code signed in to a claude.ai account — without it, `/desktop-build` designs as HTML prototypes instead
 
 **License** proprietary — all rights reserved.
