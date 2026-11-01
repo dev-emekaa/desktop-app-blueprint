@@ -1,6 +1,6 @@
 # Desktop App Blueprint
 
-Design, build and release a product's desktop app for macOS, Windows and Linux with Claude Code, connected to the real backend. Every screen follows one design system; each part of the app is designed for your approval, built and tested on realistic mock data, then connected to the backend's real endpoints. Releases are signed and go out through an update feed, to a few users first and then everyone. Seven skills and the rules behind them, for Electron · React · TypeScript · electron-vite · Tailwind CSS · shadcn/ui · TanStack Query, packaged and signed with electron-builder.
+Design, build and release a product's desktop app for macOS, Windows and Linux with Claude Code, connected to the real backend. Every screen follows one design system; each part of the app is designed for your approval, built and tested on realistic mock data, then connected to the backend's real endpoints. Releases are signed and go out through an update feed, to a few users first and then everyone. Eight skills and the rules behind them, for Electron · React · TypeScript · electron-vite · Tailwind CSS · shadcn/ui · TanStack Query, packaged and signed with electron-builder.
 
 It works with the **Backend Blueprint**: it reads the backend's product docs and API docs, and sends back screen specs and issues.
 
@@ -10,7 +10,7 @@ It works with the **Backend Blueprint**: it reads the backend's product docs and
 
 ```
 desktop-app-blueprint/
-  skills/                7 skills, one folder each
+  skills/                8 skills, one folder each
   rules/                 the rules every project uses, plus one optional
   templates/
     CLAUDE.md            the blocks to add to your project's CLAUDE.md
@@ -33,7 +33,7 @@ Then:
 
 1. **Remove the optional rule if you don't need it:** `analytics.md` — keep it only if the product tracks user behaviour with PostHog.
 2. **Add the CLAUDE.md blocks.** Paste `templates/CLAUDE.md` into your project's `CLAUDE.md` (create the file if there is none). Fill in the audiences and the project configuration now — the backend repo path and the app id above all — or leave them; each skill asks for anything missing, once.
-3. **Check it worked.** Start Claude Code and run `/context` — the rules appear under Memory files (`ci-cd.md` only once a deploy file is touched). Type `/` and the seven skills are listed.
+3. **Check it worked.** Start Claude Code and run `/context` — the rules appear under Memory files (`ci-cd.md` only once a deploy file is touched). Type `/` and the eight skills are listed.
 
 > `.claude` is a hidden folder. To see it in Finder, press **Cmd + Shift + .**
 
@@ -59,6 +59,10 @@ Then:
 3. `/desktop-integrate` — one feature per session, or the whole phase.
 4. `/desktop-release` — a new version through the update feed.
 
+**Taking over an existing desktop app**
+
+`/desktop-adopt` — once, after the backend has been adopted: documents the code the way these skills expect, with every fact citing its source, checks the backend contract, and lists where it departs from the rules; `/desktop-setup` then fills the foundation it says is missing. Then the project is run like any other.
+
 **Fixing an issue, or adopting a backend change**
 
 `/desktop-issue-fix` — reproduces on the platform it was reported on and then the others, classifies, writes the failing test, fixes surgically, updates the docs, verifies, says whether the fix rides the next release or goes out as a hotfix, and delivers a PR.
@@ -78,6 +82,8 @@ Then:
 **`/desktop-issue-fix`** — Resolves anything in what already exists: bugs, crashes in either process, platform defects, design drift, accessibility or performance problems, signing or download-page corrections, change requests, and the changes a backend handoff requires. Failing test first, surgical fix, docs updated, flows verified on every platform, and a clear answer on how the fix ships — the next release, or a hotfix from the live tag.
 
 **`/desktop-release`** — Takes a release from "what should ship" to "live for users": the release decided on the tracker, the version bumped by PR, release notes and the download page copy, the production pipeline that signs, notarizes and smoke-tests, a check of the installers on real machines against the production backend, a rollout raised step by step while the crash-free rate holds and halted when it does not, and a record of every release. Covers the first release too, and the optional store builds.
+
+**`/desktop-adopt`** — Brings an existing desktop app under the blueprint, once, after the backend: inventories the code, says whether its stack fits, reconstructs the tracker, `DESIGN.md` and the screen specs with citations, and lists deviations as issues or a proposed phase. Changes no application code.
 
 **`/screen-specs`** — What each screen sends to the backend and shows from it, written from the built screens. The same skill the Backend Blueprint ships.
 
