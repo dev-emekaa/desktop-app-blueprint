@@ -62,7 +62,7 @@ npx github:dev-emekaa/desktop-app-blueprint init --force
 
 - Skills and rules are overwritten, including any edits you made — run it on a clean working tree and read the diff before committing.
 - `CLAUDE.md` is never overwritten: it holds your project's values.
-- To pin a version: `npx github:dev-emekaa/desktop-app-blueprint#v1.1.0 init`. If an update doesn't seem to land: `npm cache clean --force`.
+- To pin a version: `npx github:dev-emekaa/desktop-app-blueprint#v1.2.0 init`. If an update doesn't seem to land: `npm cache clean --force`.
 
 ---
 
@@ -109,7 +109,7 @@ How everything looks, moves and reads in an app used for hours with a keyboard: 
 **Writes** `DESIGN.md`
 
 ### `/desktop-build`
-Designs and builds one feature area's screens: lists every screen its flows need — including offline states and window sizes — designs them for your approval, then builds them for macOS, Windows and Linux on realistic mock data with images and tests, checks every flow on the packaged app against the designs, and writes the screen specs the backend builds from.
+Designs and builds one feature area's screens: lists every screen its flows need — including offline states and window sizes — designs them for your approval, or reviews the ones a designer supplies, then builds them for macOS, Windows and Linux on realistic mock data with images and tests, checks every flow on the packaged app against the designs, and writes the screen specs the backend builds from.
 **Writes** the designs, screens, mocks, tests and screen specs
 
 ### `/desktop-integrate`
@@ -185,6 +185,7 @@ The zip appears under the release's **Assets** as `desktop-app-blueprint-v{versi
 
 - Node 22 or later, and Claude Code
 - For releases: an Apple Developer Program membership, an Azure Trusted Signing account, and a Cloudflare R2 or S3 bucket for the update feed — `/desktop-setup`'s guide walks through them
+- Optional, when a designer makes the screens: Figma, connected through its MCP. Without it, `/desktop-build` and `/design-system` read the designer's exports
 - Optional, for design research: Mobbin, connected through its MCP. Without it, `/design-system` and `/desktop-build` research on the web, plus any screenshots you put in `docs/design/references/`
 - For the `/design` canvas: a recent Claude Code signed in to a claude.ai account — without it, `/desktop-build` designs as HTML prototypes instead
 
