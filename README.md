@@ -62,7 +62,7 @@ npx github:dev-emekaa/desktop-app-blueprint init --force
 
 - Skills and rules are overwritten, including any edits you made — run it on a clean working tree and read the diff before committing.
 - `CLAUDE.md` is never overwritten: it holds your project's values.
-- To pin a version: `npx github:dev-emekaa/desktop-app-blueprint#v1.2.0 init`. If an update doesn't seem to land: `npm cache clean --force`.
+- To pin a version: `npx github:dev-emekaa/desktop-app-blueprint#v1.2.1 init`. If an update doesn't seem to land: `npm cache clean --force`.
 
 ---
 
@@ -77,12 +77,13 @@ From the backend: feature areas · business rules · app flows · (later) API do
  ├─ /design-system      DESIGN.md, once
  └─ /desktop-build      per feature area, in order:
       first, once: the navigation, the app's shell, menus and shortcuts
-      design   every screen it needs, designed for your approval        → Designed
-      build    screens on mock data, on every platform, with tests      → Built
-               → /screen-specs, sent to the backend                     → Specced
+      design   every screen it needs, designed for your approval   → Designed
+               (or a designer's screens, reviewed)
+      build    screens on mock data, on every platform, with tests → Built
+               → /screen-specs, sent to the backend                → Specced
       ↓ once every area is Specced, the backend designs its database, then
         builds the areas in order, writing each one's API docs
-    /desktop-integrate  real endpoints in place of the mocks            → Integrated
+    /desktop-integrate  real endpoints in place of the mocks       → Integrated
     /desktop-release    a signed version on the update feed, checked on real
                         machines, rolled out 10% → 100%
 
@@ -105,7 +106,7 @@ The foundation, once: the Electron project with a separate identity for developm
 **Writes** the foundation, `docs/infra/infra-setup.md`
 
 ### `/design-system`
-How everything looks, moves and reads in an app used for hours with a keyboard: researches the best desktop apps in the product's category, proposes a direction for your approval, then writes `DESIGN.md` — colours, type, every component and its states, the window on each platform, keyboard shortcuts, window sizes, motion, writing style and accessibility — and applies it to the code.
+How everything looks, moves and reads in an app used for hours with a keyboard: researches the best desktop apps in the product's category, proposes a direction for your approval — or, where a designer makes the screens, records their system — then writes `DESIGN.md` — colours, type, every component and its states, the window on each platform, keyboard shortcuts, window sizes, motion, writing style and accessibility — and applies it to the code.
 **Writes** `DESIGN.md`
 
 ### `/desktop-build`
@@ -185,7 +186,7 @@ The zip appears under the release's **Assets** as `desktop-app-blueprint-v{versi
 
 - Node 22 or later, and Claude Code
 - For releases: an Apple Developer Program membership, an Azure Trusted Signing account, and a Cloudflare R2 or S3 bucket for the update feed — `/desktop-setup`'s guide walks through them
-- Optional, when a designer makes the screens: Figma, connected through its MCP. Without it, `/desktop-build` and `/design-system` read the designer's exports
+- Optional, when a designer makes the screens — say so in the `Designs` row of `CLAUDE.md`: Figma, connected through its MCP. Without it, `/desktop-build` and `/design-system` read the designer's exports
 - Optional, for design research: Mobbin, connected through its MCP. Without it, `/design-system` and `/desktop-build` research on the web, plus any screenshots you put in `docs/design/references/`
 - For the `/design` canvas: a recent Claude Code signed in to a claude.ai account — without it, `/desktop-build` designs as HTML prototypes instead
 

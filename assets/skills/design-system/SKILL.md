@@ -1,6 +1,6 @@
 ---
 name: design-system
-description: Create or extend a product's design system for its desktop app — DESIGN.md at the project root, the source of truth for how every screen looks, moves and reads on macOS, Windows and Linux, in the DESIGN.md format. Use once per product before the first screens are designed, after reading the product docs and researching the best desktop apps in its niche, and again when a later phase needs a foundation the system does not cover.
+description: Create or extend a product's design system for its desktop app — DESIGN.md at the project root, the source of truth for how every screen looks, moves and reads on macOS, Windows and Linux, in the DESIGN.md format. Use once per product before the first screens are designed, after reading the product docs and researching the best desktop apps in its niche, or recording the system a designer's file already decides; and again when a later phase needs a foundation the system does not cover.
 ---
 
 # Design System
