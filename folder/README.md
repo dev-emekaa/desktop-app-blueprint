@@ -105,6 +105,20 @@ Rules load into every Claude Code session and apply to all the code it writes.
 
 ---
 
+## Sharing docs with the backend
+
+`/desktop-setup` installs a docs sync that copies files between this project and the backend project cloned on the same machine (its path in `CLAUDE.md`). The skills run it where they need it; run it yourself any time:
+
+```
+pnpm docs:pull                 bring in the backend's latest docs
+pnpm docs:push --specs {file}  send one screen-spec file to the backend
+pnpm docs:push --handoff       send this client's backend-issues files
+```
+
+`git pull` the backend project before pulling, and commit what you push into it.
+
+---
+
 **Requires** Claude Code, an Electron project (the setup skill creates it), and for the releases an Apple Developer Program membership, an Azure Trusted Signing account and a Cloudflare R2 or S3 bucket for the update feed. Mobbin is optional: without it, the design skills research on the web and from any screenshots you put in `docs/design/references/`. Figma is optional, for projects where a designer makes the screens (say so in the `Designs` row of `CLAUDE.md`): connected through its MCP, or the build skill reads the designer's exports. The `/design` canvas needs a recent Claude Code signed in to a claude.ai account; the build skill falls back to HTML prototypes without it. Updates replace these files — any edits you made to a skill or rule are overwritten, so keep your own changes in `CLAUDE.md` or new rule files.
 
 © dev-emeka. All rights reserved. Licensed for use in your own projects; not for redistribution.
