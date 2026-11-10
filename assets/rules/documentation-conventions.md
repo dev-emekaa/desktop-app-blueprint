@@ -41,7 +41,7 @@ Universal and project-agnostic, for the desktop client's repo. Project specifics
 | Design references | `docs/design/references/` | You, optionally: screenshots of products you admire, read by `/design-system` and `/desktop-build`. Never committed |
 | Image prompts | `docs/design/images.md` | `/desktop-build`, only when an image has to be generated outside the session |
 | Screen specs | `docs/screen-specs/` (first phase) · `docs/phase-{n}/features/{feature}/screen-specs-{feature}.md` (later) | `/screen-specs`, from the built UI. See ownership below |
-| Backend issues | `docs/integration-handoff/backend-issues-{client}.md` · its `-resolved` archive — one file per client, this repo's being `backend-issues-desktop.md` | `/desktop-integrate` and `/desktop-issue-fix`; the backend appends resolutions |
+| Backend issues | `docs/integration-handoff/backend-issues-{client}.md` · its `-resolved` archive — one file per client, this repo's being `backend-issues-desktop.md` | `/desktop-integrate` and `/desktop-issue-fix`; `/desktop-build` for a flow or rule a design shows to be wrong; the backend appends resolutions |
 | Analytics events | `docs/analytics-events.md` | `/desktop-setup`, `/desktop-build` and `/desktop-issue-fix`, where the `analytics` rule is installed |
 | Infra setup | `docs/infra/infra-setup.md` | `/desktop-setup`: the feed bucket, signing identities, notarization, the GitHub environments, the steps only a person can do |
 | Adoption report *(only in a project the blueprint didn't start)* | `docs/adoption-report.md` | `/desktop-adopt`: what it found, wrote and flagged. Docs it reconstructed carry a `Reverse-engineered … — verify` line until approved |
