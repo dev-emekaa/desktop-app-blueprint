@@ -27,6 +27,7 @@ The app is the client only. The backend (NestJS or FastAPI, built with the Backe
 | Secrets on the device | Electron `safeStorage` (Keychain, DPAPI, Secret Service): the refresh token, and nothing else |
 | Session | Access token in Main's memory, refresh token in `safeStorage`; the gateway refreshes. The renderer never holds a token |
 | Forms · validation | React Hook Form · Zod, through `@hookform/resolvers` |
+| Image generation *(optional)* | `@google/genai` (Gemini, the default) or `openai`, a dev dependency used only by `scripts/image-generate.mjs`; its key in `.env` |
 | Environment | Build-time constants per environment through electron-vite's `define` and `import.meta.env`, declared and validated with Zod in `src/shared/env.ts` |
 | Mocking | This app's in-process mock handlers in Main for the build-before-integration phase (`coding-standards` → Mock mode) · the same handlers behind a `window.api` test double in renderer tests · MSW (`msw/node`) for the gateway's own tests |
 | Dates | `date-fns` |
