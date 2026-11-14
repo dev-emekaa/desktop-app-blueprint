@@ -12,6 +12,8 @@ It works with the **Backend Blueprint**: it reads the backend's product docs and
 desktop-app-blueprint/
   skills/                8 skills, one folder each
   rules/                 the rules every project uses, plus one optional
+  docs/
+    blueprint/           desktop-app-blueprint.md — the guide, to copy into docs/ so Claude can read how the blueprint works
   templates/
     CLAUDE.md            the blocks to add to your project's CLAUDE.md
 ```
@@ -27,6 +29,7 @@ BP=~/Downloads/desktop-app-blueprint
 mkdir -p .claude/rules docs
 cp -R "$BP/skills" .claude/
 cp "$BP"/rules/*.md .claude/rules/
+cp -R "$BP/docs/blueprint" docs/
 ```
 
 Then:
@@ -119,6 +122,6 @@ pnpm docs:push --handoff       send this client's backend-issues files
 
 ---
 
-**Requires** Claude Code, an Electron project (the setup skill creates it), and for the releases an Apple Developer Program membership, an Azure Trusted Signing account and a Cloudflare R2 or S3 bucket for the update feed. Mobbin is optional: without it, the design skills research on the web and from any screenshots you put in `docs/design/references/`. Figma is optional, for projects where a designer makes the screens (say so in the `Designs` row of `CLAUDE.md`): connected through its MCP, or the build skill reads the designer's exports. Generated images take a Gemini or OpenAI API key in `.env`, or an image MCP you have configured; without either, the build skill writes each image's prompt into `docs/design/images.md` for you to generate. The `/design` canvas needs a recent Claude Code signed in to a claude.ai account; the build skill falls back to HTML prototypes without it. Updates replace these files — any edits you made to a skill or rule are overwritten, so keep your own changes in `CLAUDE.md` or new rule files.
+**Requires** Claude Code, an Electron project (the setup skill creates it), and for the releases an Apple Developer Program membership, an Azure Trusted Signing account and a Cloudflare R2 or S3 bucket for the update feed. Mobbin is optional: without it, the design skills research on the web and from any screenshots you put in `docs/design/references/`. Figma is optional, for projects where a designer makes the screens (say so in the `Designs` row of `CLAUDE.md`): connected through its MCP, or the build skill reads the designer's exports. Generated images take a Gemini or OpenAI API key in `.env`, or an image MCP you have configured; without either, the build skill writes each image's prompt into `docs/design/images.md` for you to generate. The `/design` canvas needs a recent Claude Code signed in to a claude.ai account; the build skill falls back to HTML prototypes without it. Updates replace these files — any edits you made to a skill, a rule or the guide are overwritten, so keep your own changes in `CLAUDE.md` or new rule files.
 
 © dev-emeka. All rights reserved. Licensed for use in your own projects; not for redistribution.
