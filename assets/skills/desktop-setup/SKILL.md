@@ -93,7 +93,7 @@ Wired once, used by the builds:
 
 - **The three GitHub Actions workflows `ci-cd` defines:** PR checks (three type-check projects, lint, tests, the unsigned packaging check, the `e2e` label path with the platform matrix), the staging deploy on every platform with signing, notarization, the R2 or S3 publish to the staging prefix, the `staging-current` tag, the Playwright run and the source-map upload, the `hotfix/*` triggers, and the production deploy with its release-owner check, SHA-only `commit` input, version check against the last `v*` tag, the pending prefix, the smoke run, the `stagingPercentage: 10` feed write, the source-map upload and the `v*` tag.
 - **The feed scripts:** publishing to the bucket, writing and editing `stagingPercentage` in the feed files, promoting from pending to production, and writing `downloads.json` — the current version and the installer URL per platform and architecture — next to the feed for the download page to read.
-- **Dependabot or Renovate** configuration, and the security policies `security` → Updates and supply chain requires. Check electron-builder's and Electron's current documentation for the signing, notarization and Fuses options; they change.
+- **Dependabot or Renovate** configuration — weekly, one grouped PR per ecosystem for minor and patch updates and one PR per major, across packages and GitHub Actions — and the security policies `security` → Updates and supply chain requires. Check electron-builder's and Electron's current documentation for the signing, notarization and Fuses options; they change.
 
 ## Step 10 — Docs sync with the backend
 

@@ -79,6 +79,7 @@ Nothing is designed that isn't traceable to a flow or a rule. If a screen seems 
 | Tests | Integration tests per screen state, unit tests for logic (and for any Main handler the unit adds), a Playwright journey for the unit's primary flow. | Build. |
 | Screen specs | `docs/screen-specs/screen-specs-{{unit}}.md` (or the phase file), written by `/screen-specs` from the built screens. | After the build. |
 | Backend issues | `docs/integration-handoff/backend-issues-desktop.md` — one entry per flow or rule a supplied design shows to be wrong, in `/desktop-integrate` Step 5's format. | Step 4, supplied designs only. |
+| Issues | `docs/issues.md` — one entry per problem seen in an earlier unit's screens, in the shape `documentation-conventions` gives. | Step 10, when one is noticed. |
 
 ---
 
@@ -238,7 +239,7 @@ Follow `testing` for structure and approach.
 
 #### Step 10 — Verify against the designs
 
-Walk every flow in the packaged app in mock mode — driving it with Playwright's Electron launcher and capturing screenshots, on this machine's platform and on the others through the PR's `e2e` artifacts — screen by screen, state by state, and compare each with its approved export. Check the minimum window size and a maximised window, dark mode, 200% OS scaling, the keyboard-only path through each flow with its shortcuts, the menu items the unit added on each platform, and the accessibility labels (the labels the test queries find). **Present the walk in the chat, flow by flow:** each screen, each platform, what was checked, and whether it matched. End with everything that did not match, and fix it before Step 11.
+Walk every flow in the packaged app in mock mode — driving it with Playwright's Electron launcher and capturing screenshots, on this machine's platform and on the others through the PR's `e2e` artifacts — screen by screen, state by state, and compare each with its approved export. Check the minimum window size and a maximised window, dark mode, 200% OS scaling, the keyboard-only path through each flow with its shortcuts, the menu items the unit added on each platform, and the accessibility labels (the labels the test queries find). **Present the walk in the chat, flow by flow:** each screen, each platform, what was checked, and whether it matched. End with everything that did not match, and fix it before Step 11. A problem noticed in an earlier unit's screens along the way is an entry in `docs/issues.md`, not a fix made here.
 
 If a design cannot be built as approved (a layout that does not survive real content lengths, a state the design missed), say what and propose the change; a change to an approved design is raised, not made quietly.
 

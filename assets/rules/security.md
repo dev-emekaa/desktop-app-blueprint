@@ -72,7 +72,7 @@ What may be kept on the machine, and where:
 - **New dependencies wait:** pnpm's `minimumReleaseAge` is set to seven days in `pnpm-workspace.yaml`, so a package version published an hour ago cannot be installed, which blocks most hijacked releases. A native module is reviewed with more care: it runs with the user's privileges, and it is rebuilt against this Electron with `@electron/rebuild` from source the lockfile pins.
 - **Install scripts are off by default** (pnpm's `allowBuilds` map in `pnpm-workspace.yaml`, with `strictDepBuilds` on) and enabled per package with a reason — Electron itself and the native modules are the usual entries.
 - **`pnpm audit` runs in CI**; a high or critical finding blocks the merge unless the PR records why it does not apply. Electron's own release is tracked: the app stays on a supported Electron major (the current and the two before it), because an older one stops receiving Chromium security fixes.
-- **GitHub Actions are pinned to a commit SHA**, not a tag; Dependabot or Renovate opens update PRs that go through the same checks as any other.
+- **GitHub Actions are pinned to a commit SHA**, not a tag; Dependabot or Renovate opens one grouped PR per ecosystem for the week's minor and patch updates and one PR per major — a breaking change is reviewed alone, never skipped — all through the same checks as any other.
 - **Old versions keep running.** An installed version may call the backend for months, so a change that would break one is coordinated through the backend's deprecation and minimum-version machinery (`ci-cd` → Releasing alongside the backend), never shipped and hoped for.
 
 ## Secrets and environment
